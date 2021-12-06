@@ -16,7 +16,7 @@
 - This application subscription is Free Tier Plan, only certain features is enable and maximum 10 request per minute
 
 
-## Deploy Link (error loading - in progress)
+## Deploy Link
 - https://jojonomic-football.web.app/
 
 
