@@ -1,20 +1,22 @@
 <template>
   <div id="about">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card">
-          <h3>This is an about page</h3>
-          <p>You could check the source code by the link below</p>
-          <a href="https://github.com/brnhrdwnnr/Football-Club-Profile.git">
-            <button class="button is-warning">
-              <font-awesome-icon
-                :icon="['fab', 'github']"
-                class="myIcon"
-              />&nbsp; GitHub
-            </button>
-          </a>
-        </div>
+    <div class="container">
+      <br />
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">About</li>
+        </ol>
+      </nav>
+
+      <div class="row text-start mb-3">
+        <h2>This is an about page</h2>
+        <p>You could check the source code by the link below</p>
+        <a href="https://github.com/brnhrdwnnr/Football-Club-Profile.git">
+          <button class="btn btn-primary">GitHub</button>
+        </a>
       </div>
+
+      <br />
     </div>
   </div>
 </template>

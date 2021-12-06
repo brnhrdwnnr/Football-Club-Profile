@@ -125,6 +125,5 @@ card-img-top {
   max-width: 150px;
   max-height: 75px;
   object-fit: cover;
-  /* margin-top: 10px; */
 }
 </style>
