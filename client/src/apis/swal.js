@@ -33,12 +33,10 @@ function alertLoading() {
   });
 }
 
-function LoadingDone() {
-  Swal.fire("Finished !!", "Upload success", "success");
-}
+
 
 function swalDone() {
   Swal.close();
 }
 
-export { alertSuccess, alertError, alertLoading, LoadingDone, swalDone };
+export { alertSuccess, alertError, alertLoading, swalDone };
