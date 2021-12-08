@@ -208,6 +208,6 @@ h6 {
   text-align: justify;
 }
 card {
-  background-color: #5d5c61;
+  background-color: #2C3531;
 }
 </style>

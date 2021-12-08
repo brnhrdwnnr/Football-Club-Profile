@@ -43,15 +43,36 @@
         </div>
       </div>
 
-      <div class="search">
-        <input type="text" placeholder="Search Country" v-model="searchQuery" />
-        <button>
-          <i class="fas fa-search"></i>
-        </button>
+      <div class="d-flex justify-content-between">
+        <div class="search">
+          <input
+            type="text"
+            placeholder="Search Country"
+            v-model="searchQuery"
+          />
+          <button>
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <b-pagination
+          class="pagination"
+          size="sm"
+          v-model="pageNumber"
+          :limit="2"
+          :total-rows="count"
+          :per-page="pageLimit"
+          aria-controls="areaCard"
+          align="center"
+        ></b-pagination>
       </div>
 
       <div class="row">
-        <AreaCard v-for="area in resultQuery" :key="area.id" :area="area" />
+        <AreaCard
+          id="areaCard"
+          v-for="area in resultQuery"
+          :key="area.id"
+          :area="area"
+        />
       </div>
     </div>
   </div>
@@ -67,6 +88,9 @@ export default {
       searchQuery: null,
       slide: 0,
       sliding: null,
+      pageNumber: 1,
+      pageLimit: 9,
+      count: 0,
     };
   },
   methods: {
@@ -81,6 +105,7 @@ export default {
       this.$store
         .dispatch("fetchAllAreas")
         .then((data) => {
+          this.count = data.count;
           this.$store.commit("SET_AREAS", data.areas);
           swalDone();
         })
@@ -98,14 +123,24 @@ export default {
   computed: {
     resultQuery() {
       if (this.searchQuery) {
-        return this.areas.filter((item) => {
-          return this.searchQuery
-            .toLowerCase()
-            .split(" ")
-            .every((v) => item.name.toLowerCase().includes(v));
-        });
+        return (
+          this.areas
+            // .slice(
+            //   (this.pageNumber - 1) * this.pageLimit,
+            //   this.pageNumber * this.pageLimit
+            // )
+            .filter((item) => {
+              return this.searchQuery
+                .toLowerCase()
+                .split(" ")
+                .every((v) => item.name.toLowerCase().includes(v));
+            })
+        );
       } else {
-        return this.areas;
+        return this.areas.slice(
+          (this.pageNumber - 1) * this.pageLimit,
+          this.pageNumber * this.pageLimit
+        );
       }
     },
     areas() {
@@ -138,5 +173,9 @@ export default {
 }
 h2 {
   text-align: left;
+}
+.pagination .pageNumber.active .pageLimit {
+        color: #000;
+        background-color:red;
 }
 </style>

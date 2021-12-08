@@ -42,7 +42,7 @@ export default {
   border-radius: 1px;
 }
 .card {
-  background-color: #5d5c61;
+  background-color: #2C3531;
 }
 h6 {
   margin-top: 5px;
