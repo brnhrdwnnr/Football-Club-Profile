@@ -153,7 +153,7 @@ export default {
   height: auto;
 }
 .card-player {
-  background-color: #5d5c61;
+  background-color: #2C3531;
 }
 h6 {
   color: white;

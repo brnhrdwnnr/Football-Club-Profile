@@ -112,7 +112,7 @@ h3 {
 }
 
 .card {
-  background-color: #5d5c61;
+   background-color: #2C3531;
   height: 250px;
 }
 .search {

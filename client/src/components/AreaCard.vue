@@ -52,7 +52,7 @@ export default {
   margin-top: 5px;
 }
 .card {
-  background-color: #5d5c61;
+  background-color: #2C3531;
 }
 h6 {
   color: white;
